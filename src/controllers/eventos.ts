@@ -36,29 +36,59 @@ const eventosController = {
 	},
 
 	getById: async (_req: Request, res: Response) => {
-		const id = _req.params.id
-		const idEvento = await EventoModel.findById(id);
-		return res.status(200).json({
-			status: 200,
-			data: idEvento,
-		});
+		try {
+			const id = _req.params.id
+			const idEvento = await EventoModel.findById(id);
+			return res.status(200).json({
+				status: 200,
+				data: idEvento,
+			});
+		} catch (error) {
+			if (error instanceof Error) {
+				return res.status(204).json({
+					message: error.message,
+					error: true,
+				});
+			}
+		}
 	},
 
-	// delete: async (_req: Request, res: Response) => {
-	// 	const deleteEvento = await EventoModel.deleteOne({});
-	// 	return res.status(200).json({
-	// 		status: 200,
-	// 		data: deleteEvento,
-	// 	});
-	// },
+	delete: async (_req: Request, res: Response) => {
+		try {
+			const id = _req.params.id
+			const deleteEvento = await EventoModel.findByIdAndDelete(id);
+			return res.status(200).json({
+				status: 200,
+				data: deleteEvento,
+			});
+		} catch (error) {
+			if (error instanceof Error) {
+				return res.status(204).json({
+					message: error.message,
+					error: true,
+				});
+			}
+		}
+	},
 
-	// update: async (_req: Request, res: Response) => {
-	// 	const updateEvento = await EventoModel.updateOne({});
-	// 	return res.status(200).json({
-	// 		status: 200,
-	// 		data: updateEvento,
-	// 	});
-	// },
+	update: async (_req: Request, res: Response) => {
+		try {
+			const id = _req.params.id
+			const data = _req.body
+			const updateEvento = await EventoModel.findByIdAndUpdate(id, data, { new: true });
+			return res.status(200).json({
+				status: 200,
+				data: updateEvento,
+			});
+		} catch (error) {
+			if (error instanceof Error) {
+				return res.status(204).json({
+					message: error.message,
+					error: true,
+				});
+			}
+		}
+	},
 };
 
 export default eventosController;
