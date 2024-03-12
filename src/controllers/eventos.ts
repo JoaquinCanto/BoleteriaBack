@@ -21,6 +21,7 @@ const eventosController = {
 			if (evento) {
 				return res.status(201).json({
 					message: 'Evento creado exitosamente.',
+					status: 201,
 					data: evento,
 					error: false,
 				});

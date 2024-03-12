@@ -29,7 +29,6 @@ const eventoSchema = new Schema({
 	},
 	deletedAt: {
 		type: Date,
-		default: new Date(),
 		required: false,
 	},
 });

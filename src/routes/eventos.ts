@@ -12,10 +12,10 @@ eventosRouter.post('/', eventosController.create);
 //GET - http://localhost/eventos/:id
 eventosRouter.get('/:id', eventosController.getById);
 
-// //DELETE - http://localhost/eventos/:id
+//DELETE - http://localhost/eventos/:id
 eventosRouter.delete('/:id', eventosController.delete);
 
-// //PUT - http://localhost/eventos/:id
+//PUT - http://localhost/eventos/:id
 eventosRouter.put('/:id', eventosController.update);
 
 export default eventosRouter;
