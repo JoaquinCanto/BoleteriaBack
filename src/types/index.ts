@@ -15,5 +15,4 @@ export interface UsuarioData {
 	DNI: string;
 	tel: string;
 	email: string;
-	contrasena: string;
 }

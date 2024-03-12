@@ -26,9 +26,13 @@ const usuarioSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	contrasena: {
-		type: String,
-		required: true,
+	// contrasena: {
+	// 	type: String,
+	// 	required: true,
+	// },
+	admin: {
+		type: Boolean,
+		required: false,
 	},
 	createdAt: {
 		type: Date,
@@ -37,7 +41,6 @@ const usuarioSchema = new Schema({
 	},
 	deletedAt: {
 		type: Date,
-		default: new Date(),
 		required: false,
 	},
 });

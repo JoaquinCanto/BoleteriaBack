@@ -19,7 +19,8 @@ const usuariosController = {
 			const usuario = await nuevoUsuario.save();
 			if (usuario) {
 				return res.status(201).json({
-					message: 'Evento creado exitosamente.',
+					message: 'Usuario creado exitosamente.',
+					status: 201,
 					data: usuario,
 					error: false,
 				});
@@ -41,6 +42,24 @@ const usuariosController = {
 			return res.status(200).json({
 				status: 200,
 				data: idUsuario,
+			});
+		} catch (error) {
+			if (error instanceof Error) {
+				return res.status(204).json({
+					message: error.message,
+					error: true,
+				});
+			}
+		}
+	},
+
+	getByEmail: async (_req: Request, res: Response) => {
+		try {
+			const email = _req.params.email
+			const emailUsuario = await UsuarioModel.findOne({ email: email });
+			return res.status(200).json({
+				status: 200,
+				data: emailUsuario,
 			});
 		} catch (error) {
 			if (error instanceof Error) {
