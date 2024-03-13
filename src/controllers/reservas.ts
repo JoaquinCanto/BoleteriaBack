@@ -20,7 +20,7 @@ const reservasController = {
 			const reserva = await newReseva.save();
 			if (reserva) {
 				return res.status(201).json({
-					message: 'Evento creado exitosamente.',
+					message: 'Reserva creada exitosamente.',
 					status: 201,
 					data: reserva,
 					error: false,

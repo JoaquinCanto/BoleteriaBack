@@ -18,9 +18,11 @@ export interface UsuarioData {
 }
 
 export interface ReservaData {
-	id: string;
 	idUsuario: string;
 	idEvento: string;
-	zona: Date;
-	cantidadEntradas: number;
+	nombre: string;
+	fecha: string;
+	sede: string;
+	zona: string;
+	cantidad: number;
 }

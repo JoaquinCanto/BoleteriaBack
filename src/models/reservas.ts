@@ -2,10 +2,6 @@ import { model, Schema } from 'mongoose';
 import { ReservaData } from '../types';
 
 const reservaSchema = new Schema({
-	id: {
-		type: String,
-		required: true,
-	},
 	idUsuario: {
 		type: String,
 		required: true,
@@ -14,11 +10,23 @@ const reservaSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	nombre: {
+		type: String,
+		required: true,
+	},
+	fecha: {
+		type: String,
+		required: true,
+	},
+	sede: {
+		type: String,
+		required: true,
+	},
 	zona: {
 		type: String,
 		required: true,
 	},
-	cantidadEntradas: {
+	cantidad: {
 		type: Number,
 		required: true,
 	},

@@ -26,11 +26,11 @@ const eventoSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	maxEntradas: {
+	reservas: {
 		type: Number,
 		required: true,
 	},
-	reservas: {
+	maxEntradas: {
 		type: Number,
 		required: true,
 	},
