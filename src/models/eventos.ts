@@ -22,6 +22,18 @@ const eventoSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	sede: {
+		type: String,
+		required: true,
+	},
+	maxEntradas: {
+		type: Number,
+		required: true,
+	},
+	reservas: {
+		type: Number,
+		required: true,
+	},
 	createdAt: {
 		type: Date,
 		default: new Date(),

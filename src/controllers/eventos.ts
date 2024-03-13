@@ -16,8 +16,8 @@ const eventosController = {
 	//Crear un evento
 	create: async (req: Request, res: Response) => {
 		try {
-			const nuevoEvento = new EventoModel({ ...req.body });
-			const evento = await nuevoEvento.save();
+			const newEvento = new EventoModel({ ...req.body });
+			const evento = await newEvento.save();
 			if (evento) {
 				return res.status(201).json({
 					message: 'Evento creado exitosamente.',
@@ -36,6 +36,7 @@ const eventosController = {
 		}
 	},
 
+	//Obtener un evento por id
 	getById: async (_req: Request, res: Response) => {
 		try {
 			const id = _req.params.id
@@ -54,6 +55,7 @@ const eventosController = {
 		}
 	},
 
+	//Borrar un evento por id
 	delete: async (_req: Request, res: Response) => {
 		try {
 			const id = _req.params.id
@@ -72,6 +74,7 @@ const eventosController = {
 		}
 	},
 
+	//Modificar un evento por id
 	update: async (_req: Request, res: Response) => {
 		try {
 			const id = _req.params.id
