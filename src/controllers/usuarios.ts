@@ -15,8 +15,8 @@ const usuariosController = {
 	//Crear un evento
 	create: async (req: Request, res: Response) => {
 		try {
-			const nuevoUsuario = new UsuarioModel({ ...req.body });
-			const usuario = await nuevoUsuario.save();
+			const newUsuario = new UsuarioModel({ ...req.body });
+			const usuario = await newUsuario.save();
 			if (usuario) {
 				return res.status(201).json({
 					message: 'Usuario creado exitosamente.',
@@ -35,6 +35,7 @@ const usuariosController = {
 		}
 	},
 
+	//Obtener un usuario por id
 	getById: async (_req: Request, res: Response) => {
 		try {
 			const id = _req.params.id
@@ -53,6 +54,7 @@ const usuariosController = {
 		}
 	},
 
+	//Obtener un usuario por email
 	getByEmail: async (_req: Request, res: Response) => {
 		try {
 			const email = _req.params.email
@@ -71,6 +73,7 @@ const usuariosController = {
 		}
 	},
 
+	//Borrar un usuario por id
 	delete: async (_req: Request, res: Response) => {
 		try {
 			const id = _req.params.id
@@ -89,6 +92,7 @@ const usuariosController = {
 		}
 	},
 
+	//Modificar un usuario por id
 	update: async (_req: Request, res: Response) => {
 		try {
 			const id = _req.params.id
