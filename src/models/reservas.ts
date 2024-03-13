@@ -6,6 +6,10 @@ const reservaSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	idUsuario: {
+		type: String,
+		required: true,
+	},
 	idEvento: {
 		type: String,
 		required: true,
