@@ -16,3 +16,10 @@ export interface UsuarioData {
 	tel: string;
 	email: string;
 }
+
+export interface ReservaData {
+	id: string;
+	idEvento: string;
+	zona: Date;
+	cantidadEntradas: number;
+}
